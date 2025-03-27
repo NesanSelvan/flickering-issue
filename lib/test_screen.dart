@@ -32,7 +32,8 @@ class TestScreen extends StatefulWidget {
 }
 
 class _TestScreenState extends State<TestScreen> {
-  final String imageUrl = 'https://thumbs.dreamstime.com/b/mobile-phone-wallpaper-soft-focus-delicate-flower-amidst-blurred-orange-meadow-sunset-354016436.jpg';
+  final String imageUrl =
+      'https://thumbs.dreamstime.com/b/mobile-phone-wallpaper-soft-focus-delicate-flower-amidst-blurred-orange-meadow-sunset-354016436.jpg';
   bool isLoading = false;
 
   @override
@@ -93,11 +94,7 @@ class _TestScreenState extends State<TestScreen> {
           Positioned(
             left: 0,
             right: 0,
-            child: Navbar(
-              onClose: () {
-                Navigator.of(context).pop();
-              },
-            ),
+            child: Navbar(),
           ),
         ],
       ),
@@ -106,11 +103,8 @@ class _TestScreenState extends State<TestScreen> {
 }
 
 class Navbar extends StatelessWidget {
-  final VoidCallback onClose;
-
   const Navbar({
     super.key,
-    required this.onClose,
   });
 
   @override
@@ -146,7 +140,7 @@ class Navbar extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     CupertinoButton(
-                      onPressed: onClose,
+                      onPressed: () {},
                       child: const Icon(
                         CupertinoIcons.xmark,
                         color: CupertinoColors.white,
